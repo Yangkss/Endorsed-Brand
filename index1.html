@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="logo.png"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bianca Micaela Estacio - Portfolio</title>
+    <style>
+        /* style.css */
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #F8FAB4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #F08787, #FFC7A7);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+}
+
+/* Alternative: Fade transition */
+.profile-image-fade {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.profile-image-fade img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+
+}
+
+.profile-image-fade .current-me {
+    opacity: 0;
+}
+
+.profile-image-fade:hover .baby-me {
+    opacity: 0;
+}
+
+.profile-image-fade:hover .current-me {
+    opacity: 1;
+}
+
+.header-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.header-text h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #F08787;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+    position: relative;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content Styles */
+main {
+    padding: 40px 0;
+}
+
+.section {
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #F08787;
+}
+
+.section h2 {
+    color: #F08787;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FFC7A7;
+}
+
+/* About Section */
+#about p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Skills Section */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #FEE2AD;
+    color: #333;
+}
+
+table tr:hover {
+    background-color: #F8FAB4;
+}
+
+/* Hobbies Section */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.hobby-item {
+    background-color: #FEE2AD;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #FFC7A7;
+    transition: transform 0.3s;
+}
+
+.hobby-item:hover {
+    transform: translateY(-5px);
+}
+
+.hobby-item h3 {
+    color: #F08787;
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-item {
+    background-color: #FEE2AD;
+    padding: 25px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-item h3 {
+    color: #F08787;
+    margin-bottom: 15px;
+}
+
+.project-item p {
+    margin-bottom: 15px;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: #F08787;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.project-link:hover {
+    background-color: #FFC7A7;
+    color: #333;
+}
+
+/* Certifications Section */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 1.5rem;
+}
+
+.certification-item {
+    background-color: #FEE2AD;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #F08787;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.certification-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.certification-item h3 {
+    color: #F08787;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.cert-issuer {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.cert-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.cert-desc {
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Certificate Link Styles */
+.certificate-link {
+    display: inline-block;
+    background-color: #F08787;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.certificate-link:hover {
+    background-color: #FFC7A7;
+    color: #333;
+}
+
+/* Certificate Modal Styles */
+.certificate-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    overflow: auto;
+}
+
+.certificate-modal:target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificate-modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    text-align: center;
+    border-left: 5px solid #F08787;
+}
+
+.close-certificate {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #F08787;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.close-certificate:hover {
+    color: #FFC7A7;
+}
+
+.certificate-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.certificate-caption {
+    margin-top: 15px;
+    font-style: italic;
+    color: #666;
+    text-align: center;
+}
+
+/* GitHub Section Styles */
+.github-profile {
+    text-align: center;
+}
+
+.github-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.github-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #F08787;
+}
+
+.github-info h3 {
+    color: #F08787;
+    margin-bottom: 5px;
+}
+
+.github-profile-link {
+    display: inline-block;
+    background-color: #F08787;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.github-profile-link:hover {
+    background-color: #FFC7A7;
+    color: #333;
+}
+
+.github-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.stat {
+    background-color: #FEE2AD;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #F08787;
+    margin-top: 5px;
+}
+
+/* Contact Section */
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    display: inline-block;
+    background-color: #F08787;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.social-link:hover {
+    background-color: #FFC7A7;
+    color: #333;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #F08787;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-left: 5px solid #F08787;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #F08787;
+}
+
+.close:hover {
+    color: #FFC7A7;
+}
+
+.modal-content h2 {
+    color: #F08787;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    margin-bottom: 10px;
+}
+
+.modal-content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.modal-content li {
+    margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+    
+    .hobbies-grid,
+    .projects-grid,
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .modal-content {
+        width: 90%;
+        margin: 5% auto;
+    }
+    
+    .github-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .github-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .certificate-modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-image-fade">
+                    <img src="me.png" alt="Baby Picture" class="baby-me">
+                    <img src="currentme.png" alt="Current Picture" class="current-me">
+                </div>
+                <div class="header-text">
+                    <h1>Bianca Micaela Estacio</h1>
+                    <h2><b><i>2nd Year Student</i></b></h2>
+                    <p><b>"Mas Challenging, Mas Fulfilling."</b></p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#github">GitHub</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2>About Me</h2>
+                <div class="section-content">
+                    <p>Hello! I'm Bianca, I am currently pursuing a Bachelor degree in Information Technology, with a focus on systems analysis, cloud computing, and cybersecurity.</p>
+                    <p>My academic training has provided me with a solid foundation in programming languages such as Java and Python, as well as hands-on experience in database design and network administration. I am passionate about leveraging technology to solve real-world problems and aspire to contribute to innovative solutions in the tech industry.</p>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <h2>Skills</h2>
+                <div class="section-content">
+                    <table>
+                        <tr>
+                            <th>Category</th>
+                            <th>Technologies</th>
+                        </tr>
+                        <tr>
+                            <td>Frontend</td>
+                            <td>HTML5, CSS3</td>
+                        </tr>
+                        <tr>
+                            <td>Backend</td>
+                            <td>Java, Python</td>
+                        </tr>
+                        <tr>
+                            <td>Tools</td>
+                            <td>Git, VS Code, Figma</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Hobbies Section -->
+            <section id="hobbies" class="section">
+                <h2>Hobbies</h2>
+                <div class="section-content">
+                    <div class="hobbies-grid">
+                        <div class="hobby-item">
+                            <h3>Photography</h3>
+                            <p>Capturing moments and landscapes in my free time</p>
+                        </div>
+                        <div class="hobby-item">
+                            <h3>Swimming</h3>
+                            <p>Beaches and oceans always make me calm.</p>
+                        </div>
+                        <div class="hobby-item">
+                            <h3>Reading</h3>
+                            <p>Enjoying fictional romance books and science fiction novels</p>
+                        </div>
+                        <div class="hobby-item">
+                            <h3>Gaming</h3>
+                            <p>Playing strategy and puzzle games to relax</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <h2>Projects</h2>
+                <div class="section-content">
+                    <div class="projects-grid">
+                        <div class="project-item">
+                            <h3>Library Management System</h3>
+                            <p>Developed the backend by python and used tkinter for the GUI for visual appeal.</p>
+                            <button class="project-link" onclick="showProjectDetails('library')">View Details</button>
+                        </div>
+                        <div class="project-item">
+                            <h3>Functional Digital Calculator</h3>
+                            <p>Created a customizable calculator, wherein there are features that only that calculator have.</p>
+                            <button class="project-link" onclick="showProjectDetails('calculator')">View Details</button>
+                        </div>
+                        <div class="project-item">
+                            <h3>Grocery Inventory Management</h3>
+                            <p>Built a grocery inventory management to help a grocery store.</p>
+                            <button class="project-link" onclick="showProjectDetails('grocery')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section id="certifications" class="section">
+                <h2>Certifications</h2>
+                <div class="section-content">
+                    <div class="certifications-grid">
+                        <div class="certification-item">
+                            <h3>CommTech Exploration Certificate</h3>
+                            <p class="cert-issuer">ITS Global Engagement</p>
+                            <p class="cert-date">April 21 - May 2, 2025</p>
+                            <p class="cert-desc">In recognition of valuable contribution as Participant in Virtual CommTECH Exploration 2025: ITS Students' Talent Explorations.</p>
+                            <a href="#certificate1" class="certificate-link">View Certificate</a>
+                        </div>
+                        <div class="certification-item">
+                            <h3>CommTech Exploration-Best Letter Certificate</h3>
+                            <p class="cert-issuer">ITS Global Engagement</p>
+                            <p class="cert-date">April 21 - May 2, 2025</p>
+                            <p class="cert-desc">In recognition of valuable contribution as Best Letter in Virtual CommTECH Exploration 2025: ITS Students' Talent Explorations.</p>
+                            <a href="#certificate2" class="certificate-link">View Certificate</a>
+                        </div>
+                        <div class="certification-item">
+                            <h3>Industrial Networking Essentials</h3>
+                            <p class="cert-issuer">Cisco Networking Academy</p>
+                            <p class="cert-date">July 15, 2025</p>
+                            <p class="cert-desc">Successfully achieved student level credential for completing Inductrial Networking Essentials course.</p>
+                            <a href="#certificate3" class="certificate-link">View Certificate</a>
+                        </div>
+                        <div class="certification-item">
+                            <h3>Introduction to Cybersecurity</h3>
+                            <p class="cert-issuer">Cisco Networking Academy</p>
+                            <p class="cert-date">October 14, 2024</p>
+                            <p class="cert-desc">Successfully achieved student level credential for completing Introduction to Cybersecurity course.</p>
+                            <a href="#certificate4" class="certificate-link">View Certificate</a>
+                        </div>
+                        <div class="certification-item">
+                            <h3>Networking Basics</h3>
+                            <p class="cert-issuer">Cisco Networking Academy</p>
+                            <p class="cert-date">February 4, 2025</p>
+                            <p class="cert-desc">Successfully achieved student level credential for completing Networking Basics course.</p>
+                            <a href="#certificate5" class="certificate-link">View Certificate</a>
+                        </div>
+                         <div class="certification-item">
+                            <h3>Python Essentials 1</h3>
+                            <p class="cert-issuer">Cisco Networking Academy</p>
+                            <p class="cert-date">December 1, 2024</p>
+                            <p class="cert-desc">Successfully achieved student level credential for completing Python Essentials 1 course, provided by Cisco Networking Academy in collaboration with OpenEDG Python Institute.</p>
+                            <a href="#certificate6" class="certificate-link">View Certificate</a>
+                        </div>
+                        <div class="certification-item">
+                            <h3>Python Essentials 2</h3>
+                            <p class="cert-issuer">Cisco Networking Academy</p>
+                            <p class="cert-date">January 9, 2025</p>
+                            <p class="cert-desc">Successfully achieved student level credential for completing Python Essentials 2 course, provided by Cisco Networking Academy in collaboration with OpenEDG Python Institute.</p>
+                            <a href="#certificate7" class="certificate-link">View Certificate</a>
+                        </div>
+                        <div class="certification-item">
+                            <h3>Installing and Configuring Computer Systems</h3>
+                            <p class="cert-issuer">Technical Education and Skills Development Authority</p>
+                            <p class="cert-date">July 1, 2024</p>
+                            <p class="cert-desc">Successfully achieved completing Installing and Configuring Computer Systems course.</p>
+                            <a href="#certificate8" class="certificate-link">View Certificate</a>
+                        </div>
+                        <div class="certification-item">
+                            <h3>Introduction to CSS</h3>
+                            <p class="cert-issuer">Technical Education and Skills Development Authority</p>
+                            <p class="cert-date">July 1, 2025</p>
+                            <p class="cert-desc">Successfully achieved completing Introduction to CSS course.</p>
+                            <a href="#certificate9" class="certificate-link">View Certificate</a>
+                        </div>
+                        <div class="certification-item">
+                            <h3>Maintaining Computer Systems and Networks</h3>
+                            <p class="cert-issuer">Technical Education and Skills Development Authority</p>
+                            <p class="cert-date">July 3, 2025</p>
+                            <p class="cert-desc">Successfully achieved completing Maintaining Computer Systems and Networks course.</p>
+                            <a href="#certificate10" class="certificate-link">View Certificate</a>
+                        </div>
+                        <div class="certification-item">
+                            <h3>Setting Up Computer Servers</h3>
+                            <p class="cert-issuer">Technical Education and Skills Development Authority</p>
+                            <p class="cert-date">July 9, 2025</p>
+                            <p class="cert-desc">Successfully achieved completing Setting Up Computer Servers course.</p>
+                            <a href="#certificate11" class="certificate-link">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GitHub Section -->
+            <section id="github" class="section">
+                <h2>GitHub</h2>
+                <div class="section-content">
+                    <div class="github-profile">
+                        <div class="github-header">
+                            <img src="https://github.com/Yangkss.png" alt="GitHub Avatar" class="github-avatar">
+                            <div class="github-info">
+                                <h3>@Yangkss</h3>
+                                <p>Student Developer | Passionate about coding and technology</p>
+                                <a href="https://github.com/Yangkss" class="github-profile-link" target="_blank">
+                                    Visit My GitHub Profile
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="github-stats">
+                            <div class="stat">
+                                <h4>Repositories</h4>
+                                <p class="stat-number">2</p>
+                            </div>
+                            <div class="stat">
+                                <h4>Contributions</h4>
+                                <p class="stat-number">1</p>
+                            </div>
+                            <div class="stat">
+                                <h4>Followers</h4>
+                                <p class="stat-number">18</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2>Contact</h2>
+                <div class="section-content">
+                    <div class="contact-info">
+                        <p>Email: bianca.micaela.ecoast@panpacificu.edu.ph</p>
+                        <p>Phone: +63 000 0000 000</p>
+                        <p>Location: Rosario, La Union, Philippines</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Yangkss" class="social-link" target="_blank">GitHub</a>
+                        <a href="https://www.facebook.com/bianca.estacioo" class="social-link" target="_blank">Facebook</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Web Systems Technology<br>   Panpacific University Urdaneta</p>
+            <p>&copy; 2025 Bianca Micaela Estacio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Certificate Modals -->
+    <div id="certificate1" class="certificate-modal">
+        <div class="certificate-modal-content">
+            <a href="#certifications" class="close-certificate">&times;</a>
+            <img src="participant.png" alt="CommTech Exploration Certificate" class="certificate-img">
+            <p class="certificate-caption">CommTech Exploration Certificate - ITS Global Engagement</p>
+        </div>
+    </div>
+
+    <div id="certificate2" class="certificate-modal">
+        <div class="certificate-modal-content">
+            <a href="#certifications" class="close-certificate">&times;</a>
+            <img src="bestletter.png" alt="CommTech Exploration Best Letter Certificate" class="certificate-img">
+            <p class="certificate-caption">CommTech Exploration Best Letter Certificate - ITS Global Engagement</p>
+        </div>
+    </div>
+
+    <div id="certificate3" class="certificate-modal">
+        <div class="certificate-modal-content">
+            <a href="#certifications" class="close-certificate">&times;</a>
+            <img src="industrialnet.png" alt="Industrial Networking Essentials - Cisco Networking Academy" class="certificate-img">
+            <p class="certificate-caption">Industrial Networking Essentials - Cisco Networking Academy</p>
+        </div>
+    </div>
+
+    <div id="certificate4" class="certificate-modal">
+        <div class="certificate-modal-content">
+            <a href="#certifications" class="close-certificate">&times;</a>
+            <img src="cybersecu.png" alt="Introduction to Cybersecurity - Cisco Networking Academy" class="certificate-img">
+            <p class="certificate-caption">Introduction to Cybersecurity - Cisco Networking Academy</p>
+        </div>
+    </div>
+
+    <div id="certificate5" class="certificate-modal">
+        <div class="certificate-modal-content">
+            <a href="#certifications" class="close-certificate">&times;</a>
+            <img src="networkbasic.png" alt="Networking Basics - Cisco Networking Academy" class="certificate-img">
+            <p class="certificate-caption">Networking Basics - Cisco Networking Academy</p>
+        </div>
+    </div>
+
+    <div id="certificate6" class="certificate-modal">
+        <div class="certificate-modal-content">
+            <a href="#certifications" class="close-certificate">&times;</a>
+            <img src="python1.png" alt="Python Essentials 1 - Cisco Networking Academy" class="certificate-img">
+            <p class="certificate-caption">Python Essentials 1 - Cisco Networking Academy</p>
+        </div>
+    </div>
+
+    <div id="certificate7" class="certificate-modal">
+        <div class="certificate-modal-content">
+            <a href="#certifications" class="close-certificate">&times;</a>
+            <img src="python2.png" alt="Python Essentials 2 - Cisco Networking Academy" class="certificate-img">
+            <p class="certificate-caption">Python Essentials 2 - Cisco Networking Academy</p>
+        </div>
+    </div>
+    
+    <div id="certificate8" class="certificate-modal">
+        <div class="certificate-modal-content">
+            <a href="#certifications" class="close-certificate">&times;</a>
+            <img src="install&config.png" alt="Installing and Configuring Computer Systems" class="certificate-img">
+            <p class="certificate-caption">Installing and Configuring Computer Systems - Technical Education and Skills Development Authority</p>
+        </div>
+    </div>
+
+    <div id="certificate9" class="certificate-modal">
+        <div class="certificate-modal-content">
+            <a href="#certifications" class="close-certificate">&times;</a>
+            <img src="introtocss.png" alt="Introduction to CSS" class="certificate-img">
+            <p class="certificate-caption">Introduction to CSS - Technical Education and Skills Development Authority</p>
+        </div>
+    </div>
+
+    <div id="certificate10" class="certificate-modal">
+        <div class="certificate-modal-content">
+            <a href="#certifications" class="close-certificate">&times;</a>
+            <img src="maintain.png" alt="Maintaining Computer Systems and Networks" class="certificate-img">
+            <p class="certificate-caption">Maintaining Computer Systems and Networks - Technical Education and Skills Development Authority</p>
+        </div>
+    </div>
+
+    <div id="certificate11" class="certificate-modal">
+        <div class="certificate-modal-content">
+            <a href="#certifications" class="close-certificate">&times;</a>
+            <img src="setting.png" alt="Setting Up Computer Servers" class="certificate-img">
+            <p class="certificate-caption">Setting Up Computer Servers - Technical Education and Skills Development Authority</p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        // Project details data
+        const projectDetails = {
+            'library': {
+                title: 'Library Management System',
+                description: 'A comprehensive library management system that helps librarians manage books, members, and borrowing activities efficiently.',
+                technologies: 'Python, Tkinter, SQLite',
+                features: [
+                    'Book catalog management',
+                    'Search functionality for books and members'
+                ],
+                status: 'Completed'
+            },
+            'calculator': {
+                title: 'Functional Digital Calculator',
+                description: 'A feature-rich digital calculator with unique functionalities beyond basic arithmetic operations.',
+                technologies: 'Python, Tkinter',
+                features: [
+                    'Basic arithmetic operations'   
+                ],
+                status: 'Completed'
+            },
+            'grocery': {
+                title: 'Grocery Inventory Management',
+                description: 'An inventory management system designed specifically for grocery stores to track products, stock levels, and sales.',
+                technologies: 'Python, Tkinter, CSV/Excel',
+                features: [
+                    'Stock level monitoring with alerts',
+                    'Sales tracking and reporting',
+                    'Supplier management'
+                ],
+                status: 'Completed'
+            }
+        };
+
+        // Show project details in modal
+        function showProjectDetails(projectId) {
+            const modal = document.getElementById('projectModal');
+            const modalBody = document.getElementById('modalBody');
+            const project = projectDetails[projectId];
+            
+            if (project) {
+                let featuresHTML = '';
+                project.features.forEach(feature => {
+                    featuresHTML += `<li>${feature}</li>`;
+                });
+                
+                modalBody.innerHTML = `
+                    <h2>${project.title}</h2>
+                    <p><strong>Description:</strong> ${project.description}</p>
+                    <p><strong>Technologies Used:</strong> ${project.technologies}</p>
+                    <p><strong>Status:</strong> ${project.status}</p>
+                    <p><strong>Key Features:</strong></p>
+                    <ul>${featuresHTML}</ul>
+                    <p><em>Note: This project is stored locally on my device and available for demonstration.</em>
+                `;
+                modal.style.display = 'block';
+            }
+        }
+
+        // Close modal functionality
+        document.querySelector('.close').addEventListener('click', function() {
+            document.getElementById('projectModal').style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
